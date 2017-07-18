@@ -26,12 +26,12 @@
 <li>services</li>
 <li>routes</li>
 <li>dashboard</li>
-<li>form mapper</li>a
+<li>form mapper</li>
 <li>list mapper</li>
 <li>datagridMapper</li>
 <li>search</li>
 </ul>
 
 <h3> Utilisation de SonataAdminBundle</h3>
-<img href="http://imgur.com/a/ybxdi" />
+![alt tag](https://user-images.githubusercontent.com/14042789/28318573-932b5cce-6bcb-11e7-8c6b-3ef9ad8dcf75.jpg)
 
