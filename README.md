@@ -1,72 +1,37 @@
-Symfony Standard Edition
-========================
+<h3>Installation</h3>
+<ul>
+<li>composer require sonata-project/admin-bundle</li>
+<li>composer require sonata-project/doctrine-orm-admin-bundle</li>
+<li>MAJ du noyau</li>
+<li>bower install ./vendor/sonata-project/admin-bundle/bower.json</li>
+<li>php bin/console cache:clear</li>
+<li>php bin/console assets:install</li>
+</ul>
+<h3>Génération des entités</h3>
+<ul>
+<li>Movie</li>
+<li>Cast</li>
+<li>Gallery</li>
+<li>Award</li>
+<li>Company</li>
+</ul>
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+<h3>Prise en compte des relations ManyToOne, ManyToMany, bidirectionnalité</h3>
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+<h3>Génération de la base de données</h3>
 
-What's inside?
---------------
+<h3>Configuration de SonataAdminBundle</h3>
+<ul>
+<li>Admin Class</li>
+<li>services</li>
+<li>routes</li>
+<li>dashboard</li>
+<li>form mapper</li>a
+<li>list mapper</li>
+<li>datagridMapper</li>
+<li>search</li>
+</ul>
 
-The Symfony Standard Edition is configured with the following defaults:
+<h3> Utilisation de SonataAdminBundle</h3>
+<img href="http://imgur.com/a/ybxdi" />
 
-  * An AppBundle you can use to start coding;
-
-  * Twig as the only configured template engine;
-
-  * Doctrine ORM/DBAL;
-
-  * Swiftmailer;
-
-  * Annotations enabled for everything.
-
-It comes pre-configured with the following bundles:
-
-  * **FrameworkBundle** - The core Symfony framework bundle
-
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
-
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
-
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.3/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.3/doctrine.html
-[8]:  https://symfony.com/doc/3.3/templating.html
-[9]:  https://symfony.com/doc/3.3/security.html
-[10]: https://symfony.com/doc/3.3/email.html
-[11]: https://symfony.com/doc/3.3/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
