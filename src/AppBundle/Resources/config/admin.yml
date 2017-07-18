@@ -1,0 +1,75 @@
+services:
+    app.admin.gallery:
+        class: AppBundle\Admin\GalleryAdmin
+        tags:
+            - name: sonata.admin 
+              manager_type: orm
+              group: "Content"
+              label: "Gallery" 
+              show_mosaic_button: true
+        arguments:
+            - ~
+            - AppBundle\Entity\Gallery
+           #- AppBundle:GalleryAdmin
+            - ~
+       #calls:
+           #- [ setTranslationDomain, [AppBundle]]
+           #- [ setLabelTranslatorStrategy, ["@sonata.admin.label.strategy.underscore"]]
+           #- [ setTranslationDomain, [AppBundle]]
+        public: true
+    
+    app.admin.movie:
+        class: AppBundle\Admin\MovieAdmin
+        tags:
+            - name: sonata.admin 
+              manager_type: orm
+              group: "Content"
+              label: "Movie" 
+              show_mosaic_button: true
+        arguments:
+            - ~
+            - AppBundle\Entity\Movie
+            - ~
+        public: true
+    
+    app.admin.cast:
+        class: AppBundle\Admin\CastAdmin
+        tags:
+            - name: sonata.admin 
+              manager_type: orm
+              group: "Content"
+              label: "Cast" 
+              show_mosaic_button: true
+        arguments:
+            - ~
+            - AppBundle\Entity\Cast
+            - ~
+        public: true
+        
+    app.admin.company:
+        class: AppBundle\Admin\CompanyAdmin
+        tags:
+            - name: sonata.admin 
+              manager_type: orm
+              group: "Content"
+              label: "Company" 
+              show_mosaic_button: true
+        arguments:
+            - ~
+            - AppBundle\Entity\Company
+            - ~
+        public: true
+        
+    app.admin.award:
+        class: AppBundle\Admin\AwardAdmin
+        tags:
+            - name: sonata.admin 
+              manager_type: orm
+              group: "Content"
+              label: "Award" 
+              show_mosaic_button: true
+        arguments:
+            - ~
+            - AppBundle\Entity\Award
+            - ~
+        public: true

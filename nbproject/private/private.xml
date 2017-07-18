@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp64/www/Sonate2/src/AppBundle/Entity/Cast.php</file>
+            <file>file:/C:/wamp64/www/Sonate2/src/AppBundle/Admin/AwardAdmin.php</file>
+            <file>file:/C:/wamp64/www/Sonate2/src/AppBundle/Entity/Company.php</file>
+            <file>file:/C:/wamp64/www/Sonate2/src/AppBundle/Admin/CompanyAdmin.php</file>
+            <file>file:/C:/wamp64/www/Sonate2/src/AppBundle/Entity/Movie.php</file>
+            <file>file:/C:/wamp64/www/Sonate2/src/AppBundle/Resources/config/admin.yml</file>
+            <file>file:/C:/wamp64/www/Sonate2/src/AppBundle/Entity/Gallery.php</file>
+            <file>file:/C:/wamp64/www/Sonate2/src/AppBundle/Admin/MovieAdmin.php</file>
+            <file>file:/C:/wamp64/www/Sonate2/src/AppBundle/Admin/CastAdmin.php</file>
+            <file>file:/C:/wamp64/www/Sonate2/src/AppBundle/Admin/GalleryAdmin.php</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,451 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Movie
+ *
+ * @ORM\Table(name="movie")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\MovieRepository")
+ */
+class Movie {
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Gallery", mappedBy="movie")
+     */
+    private $galleries;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Award", mappedBy="movie")
+     */
+    private $awards;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Cast", cascade="persist")
+     */
+    private $casts;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Company", cascade="persist")
+     */
+    private $companies;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fr_title", type="string", length=255)
+     */
+    private $frTitle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="en_title", type="string", length=255)
+     */
+    private $enTitle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country", type="string", length=255)
+     */
+    private $country;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plot", type="text")
+     */
+    private $plot;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="running_time", type="time")
+     */
+    private $runningTime;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="release_date", type="date")
+     */
+    private $releaseDate;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="language", type="string", length=255)
+     */
+    private $language;
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="screenplay", type="string", length=255)
+     */
+    private $screenplay;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="music", type="string", length=255)
+     */
+    private $music;
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Set frTitle
+     *
+     * @param string $frTitle
+     *
+     * @return Movie
+     */
+    public function setFrTitle($frTitle) {
+        $this->frTitle = $frTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get frTitle
+     *
+     * @return string
+     */
+    public function getFrTitle() {
+        return $this->frTitle;
+    }
+
+    /**
+     * Set enTitle
+     *
+     * @param string $enTitle
+     *
+     * @return Movie
+     */
+    public function setEnTitle($enTitle) {
+        $this->enTitle = $enTitle;
+
+        return $this;
+    }
+
+    /**
+     * Get enTitle
+     *
+     * @return string
+     */
+    public function getEnTitle() {
+        return $this->enTitle;
+    }
+
+    /**
+     * Set plot
+     *
+     * @param string $plot
+     *
+     * @return Movie
+     */
+    public function setPlot($plot) {
+        $this->plot = $plot;
+
+        return $this;
+    }
+
+    /**
+     * Get plot
+     *
+     * @return string
+     */
+    public function getPlot() {
+        return $this->plot;
+    }
+
+    /**
+     * Set runningTime
+     *
+     * @param \DateTime $runningTime
+     *
+     * @return Movie
+     */
+    public function setRunningTime($runningTime) {
+        $this->runningTime = $runningTime;
+
+        return $this;
+    }
+
+    /**
+     * Get runningTime
+     *
+     * @return \DateTime
+     */
+    public function getRunningTime() {
+        return $this->runningTime;
+    }
+
+    /**
+     * Set releaseDate
+     *
+     * @param \DateTime $releaseDate
+     *
+     * @return Movie
+     */
+    public function setReleaseDate($releaseDate) {
+        $this->releaseDate = $releaseDate;
+
+        return $this;
+    }
+
+    /**
+     * Get releaseDate
+     *
+     * @return \DateTime
+     */
+    public function getReleaseDate() {
+        return $this->releaseDate;
+    }
+
+    /**
+     * Set language
+     *
+     * @param string $language
+     *
+     * @return Movie
+     */
+    public function setLanguage($language) {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return string
+     */
+    public function getLanguage() {
+        return $this->language;
+    }
+
+    /**
+     * Set music
+     *
+     * @param string $music
+     *
+     * @return Movie
+     */
+    public function setMusic($music) {
+        $this->music = $music;
+
+        return $this;
+    }
+
+    /**
+     * Get music
+     *
+     * @return string
+     */
+    public function getMusic() {
+        return $this->music;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        $this->galleries = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add gallery
+     *
+     * @param \AppBundle\Entity\Gallery $gallery
+     *
+     * @return Movie
+     */
+    public function addGallery(\AppBundle\Entity\Gallery $gallery) {
+        $this->galleries[] = $gallery;
+
+        return $this;
+    }
+
+    /**
+     * Remove gallery
+     *
+     * @param \AppBundle\Entity\Gallery $gallery
+     */
+    public function removeGallery(\AppBundle\Entity\Gallery $gallery) {
+        $this->galleries->removeElement($gallery);
+    }
+
+    /**
+     * Get galleries
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGalleries() {
+        return $this->galleries;
+    }
+
+    /**
+     * Add cast
+     *
+     * @param \AppBundle\Entity\Cast $cast
+     *
+     * @return Movie
+     */
+    public function addCast(\AppBundle\Entity\Cast $cast) {
+        $this->casts[] = $cast;
+
+        return $this;
+    }
+
+    /**
+     * Remove cast
+     *
+     * @param \AppBundle\Entity\Cast $cast
+     */
+    public function removeCast(\AppBundle\Entity\Cast $cast) {
+        $this->casts->removeElement($cast);
+    }
+
+    /**
+     * Get casts
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCasts() {
+        return $this->casts;
+    }
+
+    /**
+     * Set country
+     *
+     * @param string $country
+     *
+     * @return Movie
+     */
+    public function setCountry($country) {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    /**
+     * Get country
+     *
+     * @return string
+     */
+    public function getCountry() {
+        return $this->country;
+    }
+
+    /**
+     * Add company
+     *
+     * @param \AppBundle\Entity\Company $company
+     *
+     * @return Movie
+     */
+    public function addCompany(\AppBundle\Entity\Company $company) {
+        $this->companies[] = $company;
+
+        return $this;
+    }
+
+    /**
+     * Remove company
+     *
+     * @param \AppBundle\Entity\Company $company
+     */
+    public function removeCompany(\AppBundle\Entity\Company $company) {
+        $this->companies->removeElement($company);
+    }
+
+    /**
+     * Get companies
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCompanies() {
+        return $this->companies;
+    }
+
+
+    /**
+     * Add award
+     *
+     * @param \AppBundle\Entity\Award $award
+     *
+     * @return Movie
+     */
+    public function addAward(\AppBundle\Entity\Award $award)
+    {
+        $this->awards[] = $award;
+
+        return $this;
+    }
+
+    /**
+     * Remove award
+     *
+     * @param \AppBundle\Entity\Award $award
+     */
+    public function removeAward(\AppBundle\Entity\Award $award)
+    {
+        $this->awards->removeElement($award);
+    }
+
+    /**
+     * Get awards
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAwards()
+    {
+        return $this->awards;
+    }
+
+  
+    /**
+     * Set screenplay
+     *
+     * @param string $screenplay
+     *
+     * @return Movie
+     */
+    public function setScreenplay($screenplay)
+    {
+        $this->screenplay = $screenplay;
+
+        return $this;
+    }
+
+    /**
+     * Get screenplay
+     *
+     * @return string
+     */
+    public function getScreenplay()
+    {
+        return $this->screenplay;
+    }
+}
